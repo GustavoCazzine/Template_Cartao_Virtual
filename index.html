@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>[Nome do Cliente] - [Especialidade] em Piracicaba</title>
+    <meta name="description" content="[Breve descrição do negócio do cliente, ex: Manicure e designer de unhas em Piracicaba. Conheça meu trabalho e agende seu horário!]">
+    <link rel="icon" href="images/favicon.png" type="image/png">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "[Nome do Negócio do Cliente]",
+        "image": "https://www.pinterest.com/saratacuris/para-fotos-de-perfil/",
+        "telephone": "+55199XXXXXXXX",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "[Endereço do Cliente]",
+            "addressLocality": "Piracicaba",
+            "addressRegion": "SP"
+        },
+        "url": "https://cartoesda.com/conhecer-cartoes/empresas/cartao-da-digital/"
+    }
+    </script>
+</head>
+<body>
+
+    <main class="card-container">
+
+        <header class="profile-section" data-aos="fade-down" data-aos-duration="1000">
+            <img src="img/" alt="Foto de perfil de [Nome do Cliente]" class="profile-picture" loading="lazy">
+            <h1 class="profile-name">[Nome do Cliente]</h1>
+            <p class="profile-bio">[Slogan ou breve descrição do negócio]</p>
+        </header>
+
+        <section class="features-section" data-aos="fade-down" data-aos-duration="1000" data-aos-delay="200">
+            <a href="contato.vcf" class="feature-button">
+                <i class="fas fa-address-card"></i> Salvar Contato
+            </a>
+            <button class="feature-button" onclick="shareCard()">
+                <i class="fas fa-share-alt"></i> Compartilhar
+            </button>
+        </section>
+
+        <section class="links-section">
+            <a href="https://wa.me/5519XXXXXXXX?text=Olá!%20Vi%20seu%20cartão%20digital." class="link-button" target="_blank" data-aos="fade-up" data-aos-delay="300">
+                <i class="fab fa-whatsapp"></i> WhatsApp
+            </a>
+            <a href="[LINK_INSTAGRAM]" class="link-button" target="_blank" data-aos="fade-up" data-aos-delay="400">
+                <i class="fab fa-instagram"></i> Instagram
+            </a>
+            <a href="[LINK_MAPS]" class="link-button" target="_blank" data-aos="fade-up" data-aos-delay="500">
+                <i class="fas fa-map-marker-alt"></i> Como Chegar
+            </a>
+            <a href="[LINK_SERVICOS]" class="link-button" target="_blank" data-aos="fade-up" data-aos-delay="600">
+                <i class="fas fa-book-open"></i> Meus Serviços
+            </a>
+        </section>
+
+        <footer class="footer-section" data-aos="fade-up" data-aos-delay="700">
+            <p>Desenvolvido por <strong>Cazzine</strong></p>
+        </footer>
+
+    </main>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      // Inicializa a biblioteca de animações
+        AOS.init({
+            duration: 800,
+            once: true,
+        });
+
+      // Função para o botão de Compartilhar
+        function shareCard() {
+            if (navigator.share) {
+                navigator.share({
+                    title: document.title,
+                    text: 'Conheça o cartão de visitas de [Nome do Cliente]!',
+                    url: window.location.href
+                }).catch(console.error);
+            } else {
+                // Fallback para caso o navegador não suporte a função
+                alert('A função de compartilhar não é suportada neste navegador. Você pode copiar o link da página.');
+            }
+        }
+    </script>
+</body>
+</html>
