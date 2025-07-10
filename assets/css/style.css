@@ -1,209 +1,117 @@
 /* =================================================================== */
-/* ============= TEMPLATE PRESTIGE CAZZINE v3.0 - CSS ================ */
+/* ============= TEMPLATE PRESTIGE "Aroma & Grão" v4.0 =============== */
 /* =================================================================== */
 
-/* --- Importação da Fonte Principal --- */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;500&display=swap');
 
-/* ================================================ */
-/* ====== PAINEL DE CONTROLE DA MARCA (CSS) ======= */
-/* ================================================ */
+/* --- Painel de Controle de Variáveis --- */
 :root {
-    /* -- CORES (Fácil de personalizar por cliente) -- */
-    --cor-primaria: #8a6b52;     /* Cor principal para botões e detalhes. Um tom terroso/nude elegante. */
-    --cor-primaria-hover: #715641; /* Tom mais escuro da cor primária para efeitos de hover. */
-    --cor-secundaria: #3d3d3d;   /* Cinza escuro para títulos e textos importantes. */
-    --cor-texto: #4f4f4f;           /* Cor do texto principal, para boa legibilidade. */
-    --cor-fundo: #fdfaf7;             /* Cor de fundo da página (body). Um branco "quente". */
-    --cor-fundo-card: #ffffff;       /* Cor do fundo do cartão principal. */
+    --cor-primaria: #4a2c2a;
+    --cor-primaria-hover: #3b2321;
+    --cor-secundaria: #3d3d3d;
+    --cor-acento: #d4ac6e;
+    --cor-texto: #4f4f4f;
+    --cor-fundo: #fdfcfb;
+    --cor-fundo-card: #ffffff;
     --cor-branca: #ffffff;
-
-    /* -- FONTES -- */
+    --fonte-display: 'Playfair Display', serif;
     --fonte-principal: 'Poppins', sans-serif;
-
-    /* -- ESPAÇAMENTOS E BORDAS -- */
-    --raio-borda-padrao: 12px;
-    --sombra-padrao: 0 10px 30px rgba(0, 0, 0, 0.07);
+    --raio-borda-padrao: 16px;
+    --sombra-padrao: 0 12px 35px rgba(0, 0, 0, 0.08);
 }
 
-/* ================================================ */
-/* ============= ESTILOS GLOBAIS E BASE ============= */
-/* ================================================ */
+/* --- Estilos Globais e do Body --- */
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
-/* Reset Básico */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-/* Estilização do Corpo da Página */
 body {
     font-family: var(--fonte-principal);
     color: var(--cor-texto);
     background-color: var(--cor-fundo);
     display: flex;
     justify-content: center;
-    align-items: flex-start; /* Alinha o card no topo em telas maiores */
+    align-items: center; /* Centraliza o card verticalmente */
     min-height: 100vh;
-    padding: 20px;
-    overflow-x: hidden; /* Previne bugs de rolagem horizontal com as animações */
+    padding: 30px 20px;
+    overflow-x: hidden;
 }
 
-/* Efeito Sutil de Fundo Gradiente Animado (Opcional) */
 body.fundo-gradiente {
-    --cor-fundo-1: #fdfaf7;
-    --cor-fundo-2: #f7f2ed;
+    --cor-fundo-1: #ffffff;
+    --cor-fundo-2: #ffdcb975;
     background: linear-gradient(-45deg, var(--cor-fundo-1), var(--cor-fundo-2), var(--cor-fundo-1));
     background-size: 400% 400%;
-    animation: subtleGradient 25s ease infinite;
+    animation: subtleGradient 15s ease infinite;
 }
-
 @keyframes subtleGradient {
     0% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
     100% { background-position: 0% 50%; }
 }
 
-/* ================================================ */
-/* =============== ESTILO DO CARTÃO =============== */
-/* ================================================ */
-
+/* --- Estilo do Card Principal --- */
 .card-container {
     width: 100%;
     max-width: 420px;
     background-color: var(--cor-fundo-card);
-    border-radius: 24px;
+    border-radius: 28px;
     box-shadow: var(--sombra-padrao);
-    overflow: hidden; /* Essencial para o efeito da curva funcionar */
-    transition: all 0.3s ease;
+    overflow: hidden;
 }
 
-/* --- Cabeçalho Curvo com Banner --- */
+/* --- Cabeçalho Curvo e Foto --- */
 .profile-header {
     position: relative;
-    height: 120px;
-    background-color: var(--cor-primaria); /* Cor do banner visível atrás da imagem */
-    background-size: cover;
-    background-position: center;
+    height: 180px;
+    background-color: #ccc;
 }
-
-.banner-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Garante que a imagem do banner preencha o espaço */
-}
-
-/* A Mágica da Curva com Pseudo-elemento */
+.banner-image img { width: 100%; height: 100%; object-fit: cover; }
 .profile-header::after {
     content: '';
     position: absolute;
     bottom: 0;
     left: -50%;
     width: 200%;
-    height: 100px;
+    height: 150px;
     background-color: var(--cor-fundo-card);
     border-radius: 50% 50% 0 0;
-    transform: translateY(50%);
+    transform: translateY(65%);
 }
-
 .profile-picture-overlapping {
     width: 120px;
     height: 120px;
     border-radius: 50%;
     border: 5px solid var(--cor-fundo-card);
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
     object-fit: cover;
     position: absolute;
-    bottom: -30px;
+    bottom: -60px;
     left: 50%;
     transform: translateX(-50%);
-    z-index: 10; /* Garante que a foto fique por cima da curva */
+    z-index: 10;
 }
 
-/* --- Seção de Informações do Perfil --- */
+/* --- Seção de Informações do Perfil (COM A CORREÇÃO) --- */
 .profile-info {
+    position: relative; /* << ESSA LINHA COLOCA O TEXTO NA CAMADA DE CIMA */
+    z-index: 20;       /* << GARANTE QUE FIQUE ACIMA DA FOTO */
     text-align: center;
-    margin-top: 100px; /* Espaço para a foto de perfil descer */
-    padding: 0 20px;
+    margin-top: 75px;
+    padding: 0 25px;
 }
+.profile-name { font-family: var(--fonte-display); font-size: 2.2em; font-weight: 700; color: var(--cor-secundaria); }
+.profile-bio { font-size: 1em; color: #888; margin-top: 8px; }
 
-.profile-name {
-    font-size: 1.8em;
-    font-weight: 700;
-    color: var(--cor-secundaria);
-}
+/* --- Título de Ação e Botões --- */
+.action-title { text-align: center; font-weight: 500; color: #c0c0c0; font-size: 0.9em; margin: 35px 0 10px 0; text-transform: uppercase; letter-spacing: 1.5px; }
+.links-section { padding: 15px 30px 20px 30px; display: flex; flex-direction: column; }
+.link-button { display: flex; align-items: center; justify-content: center; background-color: var(--cor-primaria); color: var(--cor-branca); text-decoration: none; padding: 16px; margin-bottom: 16px; border-radius: var(--raio-borda-padrao); font-size: 1.1em; font-weight: 500; border: 2px solid var(--cor-primaria); transition: all 0.3s ease; cursor: pointer; }
+.link-button:hover { background-color: var(--cor-primaria-hover); border-color: var(--cor-primaria-hover); transform: translateY(-3px); box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+.link-button:active { transform: translateY(0px) scale(0.98); }
+.link-button i { margin-right: 12px; font-size: 1.2em; }
+.btn-outline { background-color: transparent; color: var(--cor-primaria); border-color: var(--cor-acento); color: var(--cor-secundaria); }
+.btn-outline:hover { background-color: var(--cor-acento); border-color: var(--cor-acento); color: var(--cor-branca); }
 
-.profile-bio {
-    font-size: 1em;
-    color: #777;
-    margin-top: 5px;
-}
-
-/* --- Título de Ação --- */
-.action-title {
-    text-align: center;
-    font-weight: 500;
-    color: #b0b0b0;
-    font-size: 1em;
-    margin: 30px 0 -5px 0;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-/* --- Seção de Links Principais --- */
-.links-section {
-    padding: 20px 30px 15px 30px;
-    display: flex;
-    flex-direction: column;
-}
-
-/* Estilo Padrão do Botão Sólido */
-.link-button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: var(--cor-primaria);
-    color: var(--cor-branca);
-    text-decoration: none;
-    padding: 16px;
-    margin-bottom: 15px;
-    border-radius: var(--raio-borda-padrao);
-    font-size: 1.1em;
-    font-weight: 500;
-    border: 2px solid var(--cor-primaria); /* Borda da mesma cor para consistência */
-    transition: all 0.3s ease;
-    cursor: pointer;
-}
-
-.link-button:hover {
-    background-color: var(--cor-primaria-hover);
-    border-color: var(--cor-primaria-hover);
-    transform: translateY(-3px);
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-}
-
-.link-button:active {
-    transform: translateY(0px) scale(0.98);
-}
-
-.link-button i {
-    margin-right: 12px;
-    font-size: 1.2em;
-}
-
-/* Classe Modificadora para o Botão "Fantasma" (Outline) */
-.btn-outline {
-    background-color: transparent;
-    color: var(--cor-primaria);
-}
-
-.btn-outline:hover {
-    background-color: var(--cor-primaria);
-    color: var(--cor-branca);
-}
-
-/* --- Rodapé --- */
+/* --- ESTILO FINAL DO RODAPÉ E CRÉDITOS --- */
 .footer-section {
     text-align: center;
     padding: 15px 30px 30px 30px;
@@ -218,21 +126,29 @@ body.fundo-gradiente {
 }
 
 .social-icons a {
-    color: #ccc;
+    color: #d0d0d0; /* Um cinza bem claro e neutro */
     transition: all 0.3s ease;
 }
 
 .social-icons a:hover {
-    color: var(--cor-primaria);
+    color: var(--cor-acento); /* Usa a cor de acento do cliente no hover */
     transform: translateY(-3px);
 }
 
-.footer-section p {
+/* O estilo da linha de créditos */
+.credits {
     font-size: 0.8em;
-    color: #ccc;
+    color: #d0d0d0; /* Mesma cor dos ícones para consistência */
 }
 
-.footer-section strong {
-    color: #aaa;
-    font-weight: 600;
+/* O estilo para o seu nome/marca, que estará dentro de um <a> */
+.credits a {
+    color: #b0b0b0; /* Um pouco mais de destaque, mas ainda sutil */
+    font-weight: 500;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.credits a:hover {
+    color: var(--cor-primaria); /* Ao passar o mouse, ganha a cor principal do cliente */
 }

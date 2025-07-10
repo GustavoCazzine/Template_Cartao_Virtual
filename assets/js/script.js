@@ -1,4 +1,4 @@
-// Aguarda o conteúdo da página carregar completamente
+// Aguarda o conteúdo da página carregar completamente antes de executar os scripts
 document.addEventListener("DOMContentLoaded", function() {
 
     // Inicializa a biblioteca de animações (AOS)
