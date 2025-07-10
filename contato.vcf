@@ -1,0 +1,8 @@
+BEGIN:VCARD
+VERSION:3.0
+FN:[Nome Completo do Cliente]
+ORG:[Nome do Negócio do Cliente]
+TEL;TYPE=CELL,VOICE;PREF=1:[+55 19 9XXXXXXXX]
+EMAIL:[email@cliente.com]
+URL:[URL_COMPLETA_DO_CARTAO_DIGITAL]
+END:VCARD
