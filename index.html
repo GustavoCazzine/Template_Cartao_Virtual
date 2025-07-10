@@ -14,19 +14,21 @@
 
     <script type="application/ld+json">
     {
-        "@context": "https://schema.org",
-        "@type": "LocalBusiness",
-        "name": "[Nome do Negócio do Cliente]",
-        "image": "[URL_COMPLETA_DA_IMAGEM_DE_PERFIL]",
-        "telephone": "[+55199XXXXXXXX]",
-        "address": { "@type": "PostalAddress", "streetAddress": "[Endereço]", "addressLocality": "Piracicaba", "addressRegion": "SP" },
-        "url": "[URL_COMPLETA_DO_CARTAO_DIGITAL]"
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "[Nome do Negócio do Cliente]",
+      "image": "[URL_COMPLETA_DA_IMAGEM_DE_PERFIL]",
+      "telephone": "[+55199XXXXXXXX]",
+      "address": { "@type": "PostalAddress", "streetAddress": "[Endereço]", "addressLocality": "Piracicaba", "addressRegion": "SP" },
+      "url": "[URL_COMPLETA_DO_CARTAO_DIGITAL]"
     }
     </script>
 </head>
-<body class="fundo-gradiente"> <main class="card-container">
+<body class="fundo-gradiente">
 
-        <header class="profile-header" data-aos="fade-in">
+    <main class="card-container">
+
+        <header class="profile-header" data-aos="fade-in" data-aos-duration="1200">
             <div class="banner-image">
                 <img src="assets/images/banner-placeholder.jpg" alt="Banner do [Nome do Cliente]">
             </div>
@@ -38,23 +40,21 @@
             <p class="profile-bio">[Slogan ou breve descrição do negócio]</p>
         </section>
 
-        <section class="features-section" data-aos="fade-up" data-aos-delay="200">
-            <a href="contato.vcf" class="feature-button" id="save-contact-btn">
-                <i class="fas fa-address-card"></i> 
-                <span id="save-contact-text">Salvar Contato</span>
+        <h2 class="action-title" data-aos="fade-up" data-aos-delay="200">Meus Canais</h2>
+
+        <section class="links-section" data-aos="fade-up" data-aos-delay="300">
+            <a href="[LINK_WHATSAPP]" class="link-button" target="_blank">
+                <i class="fab fa-whatsapp"></i> WhatsApp
             </a>
-            <button class="feature-button" id="share-btn">
-                <i class="fas fa-share-alt"></i> Compartilhar
-            </button>
+            <a href="[LINK_INSTAGRAM]" class="link-button btn-outline" target="_blank">
+                <i class="fab fa-instagram"></i> Instagram
+            </a>
+            <a href="[LINK_MAPS]" class="link-button" target="_blank">
+                <i class="fas fa-map-marker-alt"></i> Como Chegar
+            </a>
         </section>
 
-        <section class="links-section">
-            <a href="[LINK_WHATSAPP]" class="link-button" target="_blank" data-aos="fade-up" data-aos-delay="300"><i class="fab fa-whatsapp"></i> WhatsApp</a>
-            <a href="[LINK_INSTAGRAM]" class="link-button" target="_blank" data-aos="fade-up" data-aos-delay="400"><i class="fab fa-instagram"></i> Instagram</a>
-            <a href="[LINK_MAPS]" class="link-button" target="_blank" data-aos="fade-up" data-aos-delay="500"><i class="fas fa-map-marker-alt"></i> Como Chegar</a>
-        </section>
-
-        <footer class="footer-section" data-aos="fade-up" data-aos-delay="600">
+        <footer class="footer-section" data-aos="fade-up" data-aos-delay="400">
             <div class="social-icons">
                 <a href="[LINK_FACEBOOK]" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
                 <a href="[LINK_TIKTOK]" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
