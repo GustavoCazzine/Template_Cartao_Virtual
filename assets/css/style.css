@@ -2,8 +2,6 @@
 /* ============= TEMPLATE PRESTIGE "Aroma & Grão" v4.0 =============== */
 /* =================================================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;500&display=swap');
-
 /* --- Painel de Controle de Variáveis --- */
 :root {
     --cor-primaria: #4a2c2a;
@@ -36,7 +34,7 @@ body {
 }
 
 body.fundo-gradiente {
-    --cor-fundo-1: #ffffff;
+    --cor-fundo-1: #e7d1e9;
     --cor-fundo-2: #ffdcb975;
     background: linear-gradient(-45deg, var(--cor-fundo-1), var(--cor-fundo-2), var(--cor-fundo-1));
     background-size: 400% 400%;
@@ -95,16 +93,16 @@ body.fundo-gradiente {
     position: relative; /* << ESSA LINHA COLOCA O TEXTO NA CAMADA DE CIMA */
     z-index: 20;       /* << GARANTE QUE FIQUE ACIMA DA FOTO */
     text-align: center;
-    margin-top: 75px;
+    margin-top: clamp(60px, 10vh, 75px);
     padding: 0 25px;
 }
-.profile-name { font-family: var(--fonte-display); font-size: 2.2em; font-weight: 700; color: var(--cor-secundaria); }
-.profile-bio { font-size: 1em; color: #888; margin-top: 8px; }
+.profile-name { font-family: var(--fonte-display); font-size: clamp(1.8rem, 5vw, 2.2rem); font-weight: 700; color: var(--cor-secundaria); }
+.profile-bio { font-size: clamp(0.875rem, 4vw, 1rem); color: #888; margin-top: 8px; }
 
 /* --- Título de Ação e Botões --- */
-.action-title { text-align: center; font-weight: 500; color: #c0c0c0; font-size: 0.9em; margin: 35px 0 10px 0; text-transform: uppercase; letter-spacing: 1.5px; }
-.links-section { padding: 15px 30px 0px 30px; display: flex; flex-direction: column; }
-.link-button { display: flex; align-items: center; justify-content: center; background-color: var(--cor-primaria); color: var(--cor-branca); text-decoration: none; padding: 16px; margin-bottom: 16px; border-radius: var(--raio-borda-padrao); font-size: 1.1em; font-weight: 500; border: 2px solid var(--cor-primaria); transition: all 0.3s ease; cursor: pointer; }
+.action-title { text-align: center; font-weight: 500; color: #c0c0c0; font-size: 0.9em; margin: clamp(20px, 4vh, 35px) 0 10px 0; text-transform: uppercase; letter-spacing: 1.5px; }
+.links-section { padding: clamp(10px, 2vh, 15px) 30px 0px 30px; display: flex; flex-direction: column; }
+.link-button { display: flex; align-items: center; justify-content: center; background-color: var(--cor-primaria); color: var(--cor-branca); text-decoration: none; padding: 16px; margin-bottom: 16px; border-radius: var(--raio-borda-padrao); font-size: clamp(1rem, 4vw, 1.125rem); font-weight: 500; border: 2px solid var(--cor-primaria); transition: all 0.3s ease; cursor: pointer; }
 .link-button:hover { background-color: var(--cor-primaria-hover); border-color: var(--cor-primaria-hover); transform: translateY(-3px); box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
 .link-button:active { transform: translateY(0px) scale(0.98); }
 .link-button i { margin-right: 12px; font-size: 1.2em; }
@@ -114,7 +112,7 @@ body.fundo-gradiente {
 /* --- ESTILO FINAL DO RODAPÉ E CRÉDITOS --- */
 .footer-section {
     text-align: center;
-    padding: 15px 30px 30px 30px;
+    padding: clamp(15px, 2vh, 25px) 30px clamp(20px, 3vh, 30px) 30px;
 }
 
 .social-icons {
